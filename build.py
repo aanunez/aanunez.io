@@ -29,7 +29,7 @@ with open(MAIN, 'r+') as indexfh:
         for line in buildfh:
             if line.startswith('<h2') and (line.find('|') != -1):
                 work = line.split('|')
-                date = '<date>' + work[1].split('<')[0] + '</date></h2>'
+                date = '<span class="date">' + work[1].split('<')[0] + '</span></h2>'
                 indexfh.write(work[0] + date)
             else:
                 indexfh.write(line)
