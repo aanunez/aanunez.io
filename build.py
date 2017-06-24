@@ -18,7 +18,6 @@ except: pass
 os.system('pandoc -f markdown ' + POSTS_DIR + '/* > ' + BUILD_FILE)
 shutil.copy(TEMPLATE, MAIN)
 
-# Loop One, replace the content marker
 with open(MAIN, 'r+') as indexfh:
     while not indexfh.readline().lstrip().startswith(FLAG):
         continue
@@ -34,3 +33,6 @@ with open(MAIN, 'r+') as indexfh:
             else:
                 indexfh.write(line)
     indexfh.write(index_footer)
+
+try: os.remove(BUILD_FILE)
+except: pass

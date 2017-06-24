@@ -2,5 +2,5 @@
 
 name=$(date "+%Y.%m.%d-%H.%M")
 line=$(date "+%Y %m %d")
-echo "##Title\n"$line > $name
+echo "##Title | "$line > $name
 

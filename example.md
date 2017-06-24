@@ -1,5 +1,4 @@
-## Sample Blog Post
-2017 23 6
+## Sample Blog Post | 2017 23 6
 
 A quick summary on the below
 
