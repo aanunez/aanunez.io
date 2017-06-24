@@ -15,7 +15,9 @@ except: pass
 try: os.remove(BUILD_FILE)
 except: pass
 
-os.system('pandoc -f markdown ' + POSTS_DIR + '/* > ' + BUILD_FILE)
+mdlist = ' posts/'.join(next(os.walk(POSTS_DIR))[2])
+
+os.system('pandoc -f markdown ' + 'posts/' + mdlist + ' > ' + BUILD_FILE)
 shutil.copy(TEMPLATE, MAIN)
 
 with open(MAIN, 'r+') as indexfh:
