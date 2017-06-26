@@ -15,7 +15,9 @@ except: pass
 try: os.remove(BUILD_FILE)
 except: pass
 
-mdlist = ' posts/'.join(next(os.walk(POSTS_DIR))[2])
+mdlist = next(os.walk(POSTS_DIR))[2]
+list.sort(mdlist, reverse=True)
+mdlist = ' posts/'.join(mdlist)
 
 os.system('pandoc -f markdown ' + 'posts/' + mdlist + ' > ' + BUILD_FILE)
 shutil.copy(TEMPLATE, MAIN)
