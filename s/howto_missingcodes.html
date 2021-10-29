@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MissingCode how-to guide</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+        </script>
+        <style>
+            div.panel-body {
+                line-height: 22px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1><span class="glyphicon glyphicon-info-sign"></span> How to use the @MissingCode Action Tag</h1>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    Purpose
+                </div>
+                <div class="panel-body">
+                    This action tag allows you to add buttons below a text or notes field with options such as "Missing" or "Don't know". These buttons, when selected, will disable entry on the box and populate it with an appropriate coded value determined by the validation, if any, used on the field. Available options include ...
+                    <ul>
+                        <li>Not Applicable  </li>
+                        <li>Prefer not to answer</li>
+                        <li>Refused</li>
+                        <li>Declined</li>
+                        <li>Don't Know</li>
+                        <li>Missing</li>
+                    </ul> 
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Prerequisites
+                </div>
+                <div class="panel-body">
+                    Using this action tag requires <b>no</b> special knowledge, changes to your project settings, or intervention by administrators.
+                </div>
+            </div>
+            <style>
+            .left-border{
+                border-left: #ddd;
+                border-left-width: thin;
+                border-left-style: solid;
+            }
+            </style>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Default Code Values
+                </div>
+                <div class="panel-body">
+                The code value used by the action tag is determined by any validation enabled on the field. Validations such as "Date Time" and "YMD" behave as expected, concatenating or adjusting the date format as needed. The default phone numbers used are from the "555-0100" line number block which is guaranteed to never be in use.
+                <br></br>
+                <table class="table table-hover">
+                  <tr>
+                    <th style="border-top:none"></th>
+                    <th style="border-top:none"></th>
+                    <th colspan="6" class="left-border"  style="border-top:none">Validation Type</th>
+                  </tr> 
+                  <tr>
+                    <th><b>Symbol</b></td>
+                    <th><b>Button Text</b></td>
+                    <th class="left-border"><b>None, Integer, Number</b></td>
+                    <th><b>Zip</b></td>
+                    <th><b>Email<br></b></td>
+                    <th><b>Time</b></td>
+                    <th><b>Date</b></td>
+                    <th><b>Phone</b></td>
+                  </tr>
+                  <tr>
+                    <td>NA</td>
+                    <td>Not Applicable</td>
+                    <td class="left-border">-6</td>
+                    <td>99999-0006</td>
+                    <td>redcap-noreply@ictr.wisc.edu</td>
+                    <td>00:00</td>
+                    <td>01-01-1906</td>
+                    <td>(608) 555-0106</td>
+                  </tr>
+                  <tr>
+                    <td>PF</td>
+                    <td>Prefer not to answer</td>
+                    <td class="left-border">-7</td>
+                    <td>99999-0007</td>
+                    <td>redcap-noreply@ictr.wisc.edu</td>
+                    <td>00:00</td>
+                    <td>01-01-1907</td>
+                    <td>(608) 555-0107</td>
+                  </tr>
+                  <tr>
+                    <td>RF</td>
+                    <td>Refused</td>
+                    <td class="left-border">-7</td>
+                    <td>99999-0007</td>
+                    <td>redcap-noreply@ictr.wisc.edu</td>
+                    <td>00:00</td>
+                    <td>01-01-1907</td>
+                    <td>(608) 555-0107</td>
+                  </tr>
+                  <tr>
+                    <td>DC</td>
+                    <td>Declined</td>
+                    <td class="left-border">-7</td>
+                    <td>99999-0007</td>
+                    <td>redcap-noreply@ictr.wisc.edu</td>
+                    <td>00:00</td>
+                    <td>01-01-1907</td> 
+                    <td>(608) 555-0107</td>
+                  </tr>
+                  <tr>
+                    <td>DK</td>
+                    <td>Don't Know</td>
+                    <td class="left-border">-8</td>
+                    <td>99999-0008</td>
+                    <td>redcap-noreply@ictr.wisc.edu</td>
+                    <td>00:00</td>
+                    <td>01-01-1908</td>
+                    <td>(608) 555-0108</td>
+                  </tr>
+                  <tr>
+                    <td>MS</td>
+                    <td>Missing</td>
+                    <td class="left-border">-9</td>
+                    <td>99999-0009</td>
+                    <td>redcap-noreply@ictr.wisc.edu</td>
+                    <td>00:00</td>
+                    <td>01-01-1909</td>
+                    <td>(608) 555-0109</td>
+                  </tr>
+                </table>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    Using the action tag
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>Create a text or notes field.</li>
+                        <li>In the <b>Action Tags / Field Annotation</b><br>
+                            Add the <b>@MISSINGCODE=SYMBOL</b> annotation<br>
+                        <li> Consult the above table for a list of <b>symbols</b> that can be used.
+                        </li>
+                        <li>
+                            <b>Basic Examples</b><br>
+                            <pre>@MISSINGCODE=DK,PF</pre>
+                            <img class="img-responsive" src="https://uwmadison.box.com/shared/static/fkviearyabdvj3cltfw5pfnpp3y7dxjm.png">
+                            <br></br>
+                            <pre>@MISSINGCODE=DC @CHARLIMIT=4</pre>
+                            <img class="img-responsive" src="https://uwmadison.box.com/shared/static/agcynqzvye30jbjajh4qo3soz6gbi4bt.png">
+                            <br></br>
+                            <pre>@DEFAULT="The Hitchhiker's Guide to The Galaxy" @MISSINGCODE=DK,RF</pre>
+                            <img class="img-responsive" src="https://uwmadison.box.com/shared/static/yv71cixtt34hh00oe2iq6nacihybia18.png">
+                            <br></br>
+                        </li>
+                        <li>
+                            <b>Interacting With Branching Logic</b><br>
+                            If the specific date of an event isn't known we can use simple branching logic, checking for the coded value of the button in the first field, to show a follow up question asking for a month & year or only year.
+                            <img class="img-responsive" src="https://uwmadison.box.com/shared/static/ikd6svvtslm0l1nu8u3e9lo3ek5siaft.png">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    Issues & Notes
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>The action tag correctly <b>respects the @READONLY action tag</b> and isn't usable on a read-only field. </li>
+                        <li>The buttons created by this action tag do not display on the "preview instrument" page  </li>
+                        <li>Due to an issue with how RedCap implements the <b>@CHARLIMIT</b> action tag, the <b>@MISSINGCODE</b> action tag must be first, as seen above, when used on the same field.</li>
+                        <li>Using the <kbd>,)("</kbd> characters in either the custom code or button name, discussed below, will prevent the button from working properly.</li>
+                        <li>Using the <kbd>\</kbd> character in custom code values, discussed below, will break the button.</li>
+                        <li>There is no dodging RedCap's built in validation. If you enable validation on the field then your coded value must be within the specified range.
+                    </ul> 
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    Advanced Usage
+                </div>
+                <div class="panel-body">
+                    In addition to the typical usage, <b>@MISSINGCODE</b> can also be used for custom button text and coded values.
+                    <ul>
+                        <li>Use the action tag as described above, but with the syntax<br>
+                            <b>@MISSINGCODE=("Text","Code")</b>
+                        </li>
+                        <li>You can mix the above symbols in with custom values too, but you will need to wrap them in parentheses. <br>
+                            <b>@MISSINGCODE=("Text","Code"),(SYMBOL)</b>
+                        </li>
+                        <li>If your custom text includes spaces, you should instead use underscores. Spaces are not permitted in the coded values and underscores are interpreted literally in them.<br>
+                            <b>@MISSINGCODE=("Button_Text","Code"),(SYMBOL),("Another_Button","999")</b>
+                        </li>
+                        <li>In all of the above <b>please note the lack spacing</b>. Adding unneeded spaces may cause RedCap's parsing engine to ignore the tag.<br>
+                        </li>
+                        <li>
+                            <b>Examples</b><br>
+                            <pre>@MISSINGCODE=("Out_of_Office","ooo")</pre>
+                            <img class="img-responsive" src="https://uwmadison.box.com/shared/static/0bovgorwymvbxcb80xno445wpqhlbxg4.png">
+                            <br></br>
+                            <pre>@MISSINGCODE=(DK),("Will_Collect_In_Future","-1")</pre>
+                            <img class="img-responsive" src="https://uwmadison.box.com/shared/static/rw9s08z5fuskdnypabf49ng8dxtfweww.png">
+                            <br></br>
+                            <b>Novel Case</b> - Include common answers to a text field, either as a coded value, a the literal value, or a pre-calculated value.
+                            <pre>@MISSINGCODE=("Python","Python"),("Go","Go"),("PHP","lolno")</pre>
+                            <img class="img-responsive" src="https://uwmadison.box.com/shared/static/h34u5ybmwlcqwcxf9o7ppk7x38cd3qim.png">
+                            <br></br>
+                            <pre>@MISSINGCODE=("1_Pack","20"),("2_Packs","40"),("3_Packs","60")</pre>
+                            <img class="img-responsive" src="https://uwmadison.box.com/shared/static/gvi10xl0bt1wu9i1kjnltij50g40hlvr.png">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
