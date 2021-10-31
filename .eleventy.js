@@ -26,7 +26,7 @@ module.exports = function (eleventyConfig) {
     yaml.safeLoad(contents)
   );
 
-  // Copy Static Files to /_Site
+  // Copy Static Files to /_site
   eleventyConfig.addPassthroughCopy({
     "./src/admin/config.yml": "./admin/config.yml",
     "./node_modules/alpinejs/dist/cdn.min.js": "./static/js/alpine.js",
@@ -39,7 +39,10 @@ module.exports = function (eleventyConfig) {
 
   // Copy favicon to route of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
-
+  
+  // Copy docs folder to route of /_site
+  eleventyConfig.addPassthroughCopy("./src/static/docs");
+  
   // Minify HTML
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     // Eleventy 1.0+: use this.inputPath and this.outputPath instead
