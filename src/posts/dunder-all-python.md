@@ -1,5 +1,11 @@
-##Managing \__all__ in Python | 2017 06 24
-
+---
+title: Managing __all__ in Python
+description: A short dive into managing a python global that can get out of hand in larger projects
+author: Adam
+date: 2017-06-24
+tags:
+  - python
+---
 I recently had some issues organizing a Python [project](https://github.com/aanunez/tortilla8). I was concerned that `import foo` wasn't including everything an end user would expect and the simple solution of importing everything in `__init__` added a lot of mess (constants and other imports specific to the module) to the environment. The solution is to add `__all__` to every module, which should list all exportable definitions. Unfortunately, managing `__all__` across multiple modules isn't fun or easy, luckily I stumbled across a lecture by [David Beazley](https://www.youtube.com/watch?v=bGYZEKstQuQ) where it is suggested that an `export` decorator be used to build `__all__`.
 
 Placing the below export decorator in `__init__` means that two lines of boiler plate are needed in modules: `__all__ = []` and `from . import export`. This specific version is lifted from stack overflow user [Ed L](https://stackoverflow.com/questions/41895077/export-decorator-that-manages-all). Using this you get the behavior one would expect when using `from foo import *` and from `import foo`, everything decorated with export and nothing else.
@@ -16,7 +22,5 @@ def export(defn):
         mod.__all__ = [defn.__name__]
     return defn
 ```
-
-
 
 
