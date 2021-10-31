@@ -37,8 +37,11 @@ module.exports = function (eleventyConfig) {
   // Copy Image Folder to /_site
   eleventyConfig.addPassthroughCopy("./src/static/img");
 
-  // Copy favicon to route of /_site
+  // Copy favicon to root of /_site
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
+  
+  // Copy netlify redirects file to root of /_site
+  eleventyConfig.addPassthroughCopy("./_redirects");
   
   // Minify HTML
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
