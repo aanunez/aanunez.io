@@ -1,0 +1,7 @@
+items:
+  - text: Resume
+    url: "#"
+  - text: Docs
+    url: "#"
+  - text: Blog
+    url: /blog
