@@ -30,6 +30,8 @@ collections:
   - label: "Docs"
     name: "Documentation"
     description: "All docs pages are created in the 'docs' folder. They are typically styled independent of the core site."
+    fields:
+        - { label: "Placeholder", name: "placeholder", widget: "string" }
   - label: "Settings"
     name: "settings"
     editor:
