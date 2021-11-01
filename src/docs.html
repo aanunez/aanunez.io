@@ -7,7 +7,7 @@ layout: docs
         {% set doclist = collections.doc %}
         
         {% for item in doclist %}
-            <a href="{{item.url}}" target="_blank" class="mt-8 p-5 border rounded border-gray-200 hover:border-purple-400">
+            <a href="{{item.url}}" target="_blank" class="mt-8 p-5 border shadow-lg rounded border-gray-200 hover:border-purple-400">
                 <h3>{{item.data.title}}
                     →</h3>
                 <p>{{item.data.description}}</p>
