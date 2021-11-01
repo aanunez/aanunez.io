@@ -4,8 +4,6 @@
 
 * Small screen nav bar is broken
 
-* Redo Index page
-
 ### Local Deploy
 
 ```
