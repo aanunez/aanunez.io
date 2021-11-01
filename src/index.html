@@ -4,9 +4,31 @@ title: zǝunN ɯɐp∀
 path: home
 ---
 
-<section class="mt-15" >
 <div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <div class="max-w-6xl grid grid-cols-2 gap-3">
+  <h1>
+    Welcome to
+    <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+      {{title}}
+    </strong>
+  </h1>
+
+  <p>
+    <abbr title="netlify cms, eleventy, alpine js & tailwind css">NEAT</abbr>
+    Starter Template. Get Started by editing.
+    <code class="bg-gray-100 text-blue-800 p-1">/index.njk</code>
+  </p>
+
+  {% include "./_includes/partials/content.html" %}
+</div>
+
+---
+layout: default
+title: zǝunN ɯɐp∀
+path: home
+---
+
+<div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
+  <div class="my-16 max-w-6xl grid grid-cols-2 gap-3">
     <div>
       <h3><strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
       Hello world!
@@ -15,11 +37,10 @@ path: home
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan aliquam consectetur. Pellentesque mattis consequat eros eget sollicitudin. Maecenas tellus urna, maximus eget ultrices a, malesuada sed sapien. Nulla elementum neque nulla. Pellentesque quis condimentum purus. Curabitur aliquet, augue quis semper finibus, neque felis tincidunt dui, vel maximus purus est luctus dui. Cras sed nisl ac mauris maximus eleifend vel at nisl. In nec sollicitudin metus. Sed vitae hendrerit elit. 
     </div>
     <div>
-        Image here
+        <img class="rounded-md" src="https://lh3.googleusercontent.com/pw/AM-JKLVkJh613iUvvllzBmoi_qIlRK0RqBWLiIx-L4x49vAiW2k3oT7kRQc8FPcM9v3_t9wI_Q9UXPaxSZQH_cLjovjrsK1meSkXw9hKdtaxTVaKlkZpuuHuslyZfCaSaBbTosxNQ2eVXBxMBVrLJi2ksTzRsA=w726-h968-no?authuser=0">
     </div>
   </div>
   
   {% include "./_includes/partials/content.html" %}
   
-</div>
 </div>
