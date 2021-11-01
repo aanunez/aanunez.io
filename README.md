@@ -4,6 +4,8 @@
 
 * Small screen nav bar is broken
 
+* Add buttons for linkedin, email
+
 ### Local Deploy
 
 ```
