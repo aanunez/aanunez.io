@@ -9,14 +9,14 @@ path: home
     <div class="flex flex-wrap content-center">
       <h1>
         <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-        Howdy!
+        {{home.greet}}
         </strong>
       </h1>
       <br>
-      I'm Adam, a full-time REDCap developer and Admin at the UW Madison Center for Tobacco Research and Intervention, a part-time Master's student, and occasional consultant for various things. 
+      {{home.text}}
     </div>
     <div>
-        <img class="rounded-md" src="https://lh3.googleusercontent.com/pw/AM-JKLVkJh613iUvvllzBmoi_qIlRK0RqBWLiIx-L4x49vAiW2k3oT7kRQc8FPcM9v3_t9wI_Q9UXPaxSZQH_cLjovjrsK1meSkXw9hKdtaxTVaKlkZpuuHuslyZfCaSaBbTosxNQ2eVXBxMBVrLJi2ksTzRsA=w726-h968-no?authuser=0">
+        <img class="rounded-md" src="{{home.img}}">
     </div>
   </div>
   <!--{% include "./_includes/partials/content.html" %}-->

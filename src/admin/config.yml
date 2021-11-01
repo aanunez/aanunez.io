@@ -44,8 +44,7 @@ collections:
         fields:
           - { label: Greeting, name: greet, widget: string }
           - { label: Text, name: text, widget: text }
-          - { label: Image URL, name: imglink, widget: string }
-          - { label: Image Local/Upload, name: imglocal, widget: image }
+          - { label: Image, name: img, widget: image }
       - label: "Navigation"
         name: "items"
         file: "src/_data/navigation.yaml"
