@@ -38,6 +38,14 @@ collections:
     editor:
       preview: false
     files:
+      - label: "Home Page"
+        name: "home"
+        file: "src/_data/home.yaml"
+        fields:
+          - { label: Greeting, name: greet, widget: string }
+          - { label: Text, name: text, widget: text }
+          - { label: Image URL, name: imglink, widget: string }
+          - { label: Image Local/Upload, name: imglocal, widget: image }
       - label: "Navigation"
         name: "items"
         file: "src/_data/navigation.yaml"
