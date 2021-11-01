@@ -5,18 +5,22 @@ path: home
 ---
 
 <div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <h1>
-    Welcome to
-    <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-      {{title}}
-    </strong>
-  </h1>
 
-  <p>
-    <abbr title="netlify cms, eleventy, alpine js & tailwind css">NEAT</abbr>
-    Starter Template. Get Started by editing.
-    <code class="bg-gray-100 text-blue-800 p-1">/index.njk</code>
-  </p>
 
+
+  <div class="grid grid-cols-2 gap-3">
+    <div>
+      <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+      Hello world!
+      </strong>
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan aliquam consectetur. Pellentesque mattis consequat eros eget sollicitudin. Maecenas tellus urna, maximus eget ultrices a, malesuada sed sapien. Nulla elementum neque nulla. Pellentesque quis condimentum purus. Curabitur aliquet, augue quis semper finibus, neque felis tincidunt dui, vel maximus purus est luctus dui. Cras sed nisl ac mauris maximus eleifend vel at nisl. In nec sollicitudin metus. Sed vitae hendrerit elit. 
+    </div>
+    <div>
+        Image here
+    </div>
+  </div>
+  
   {% include "./_includes/partials/content.html" %}
+  
 </div>
