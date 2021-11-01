@@ -27,6 +27,9 @@ collections:
         multiple: true
         create: true
         options: ["Tags", "created", "from", "config.yml"]
+  - label: "Docs"
+    name: "Documentation"
+    description: "All docs pages are created in the 'docs' folder. They are typically styled independent of the core site."
   - label: "Settings"
     name: "settings"
     editor:
