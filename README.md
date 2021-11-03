@@ -2,7 +2,7 @@
 
 ### Issues
 
-* Small screen nav bar is broken
+* Small screen nav bar is broken, removing all divs under the menu comment fixes it. [Example working code](https://alpinetoolbox.com/examples/navbar)
 
 * Resume
 
