@@ -33,11 +33,6 @@ collections:
     folder: "src/docs"
     fields:
         - { label: "Placeholder", name: "placeholder", widget: "string" }
-  - label: "Resume"
-    name: "resume"
-    file: "src/_data/resume.yaml"
-    fields:
-        - { label: "Full Resume", name: "text", widget: "textarea" }
   - label: "Settings"
     name: "settings"
     editor:
@@ -51,6 +46,11 @@ collections:
           - { label: Greeting, name: greet, widget: string }
           - { label: Text, name: text, widget: text }
           - { label: Image, name: img, widget: image }
+      - label: "Resume"
+        name: "resume"
+        file: "src/_data/resume.yaml"
+        fields:
+            - { label: "Full Resume", name: "text", widget: "textarea" }
       - label: "Navigation"
         name: "items"
         file: "src/_data/navigation.yaml"
