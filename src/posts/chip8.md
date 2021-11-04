@@ -1,6 +1,8 @@
 ---
 title: Emulating the Chip8
-description: A lengthy post reviewing the ins and outs of Chip-8 and a python based emulator written for it
+description: Reviewing the ins and outs of Chip-8 and a python based emulator
+  written for it. Helpful for those interested in writing their own or who are
+  curious as to why creating emulators for the system is so common.
 author: Adam
 date: 2018-07-27
 tags:
