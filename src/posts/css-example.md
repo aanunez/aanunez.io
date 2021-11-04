@@ -5,6 +5,7 @@ author: Adam
 date: 2021-10-01
 tags:
   - example
+  - meta
 ---
 # This is a Heading h1
 
@@ -79,7 +80,7 @@ Capitalize on low hanging fruit to identify a ballpark value added activity to b
 
 ## Horizontal Rules
 
----
+- - -
 
 ## Emphasis
 
@@ -87,9 +88,9 @@ Capitalize on low hanging fruit to identify a ballpark value added activity to b
 
 **This is bold text**
 
-_This is italic text_
+*This is italic text*
 
-_This is italic text_
+*This is italic text*
 
 ~~Strikethrough~~
 
@@ -105,27 +106,28 @@ _This is italic text_
 
 Unordered
 
-- Create a list by starting a line with `+`, `-`, or `*`
-- Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    - Ac tristique libero volutpat at
+* Create a list by starting a line with `+`, `-`, or `*`
+* Sub-lists are made by indenting 2 spaces:
+
+  * Marker character change forces new list start:
+
+    * Ac tristique libero volutpat at
     * Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-- Very easy!
+    * Nulla volutpat aliquam velit
+* Very easy!
 
 Ordered
 
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
-
 4. You can use sequential numbers...
 5. ...or keep all the numbers as `1.`
 
 Start numbering with offset:
 
 57. foo
-1. bar
+58. bar
 
 ## Code
 
@@ -133,10 +135,12 @@ Inline `code`
 
 Indented code
 
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
+```
+// Some comments
+line 1 of code
+line 2 of code
+line 3 of code
+```
 
 Block code "fences"
 
@@ -173,5 +177,3 @@ Autoconverted link https://github.com/nodeca/pica
 ## Images
 
 ![Minion](https://octodex.github.com/images/minion.png)
-
-
