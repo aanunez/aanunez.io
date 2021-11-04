@@ -6,6 +6,8 @@
 
 * Remove "Quick Links" from cms and replace with the contact links on home page.
 
+* Resume
+
 ### Local Deploy
 
 ```
