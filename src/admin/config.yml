@@ -50,7 +50,7 @@ collections:
         name: "resume"
         file: "src/_data/resume.yaml"
         fields:
-            - { label: "Full Resume", name: "text", widget: "textarea" }
+            - { label: "Full Resume", name: "text", widget: "markdown" }
       - label: "Navigation"
         name: "items"
         file: "src/_data/navigation.yaml"
