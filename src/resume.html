@@ -2,8 +2,10 @@
 layout: resume
 ---
 
-<section>
-    <div class="container mx-auto lg:h-screen flex flex-col">
-        {{resume.text}}
-    </div>
-</section>
+<div class="container mx-auto lg:h-screen flex flex-col">
+
+    <article class="prose lg:prose-xl my-4 mx-auto">
+        {{ resume.text | safe }}    
+    </article>
+    
+</div>
