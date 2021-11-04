@@ -14,6 +14,8 @@ npm run build
 npm run start
 ```
 
+If you run into build issue regarding errors in tailwind you probably need to update npm, tailwind requires v12+
+
 ### Technologies used:
 
 - [Netlify CMS](https://www.netlifycms.org/)

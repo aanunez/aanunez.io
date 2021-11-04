@@ -30,12 +30,12 @@ collections:
   - label: "Docs"
     name: "Documentation"
     description: "All docs pages are created in the 'docs' folder. They are typically styled independent of the core site."
-    file: "src/_data/resume.yaml"
+    folder: "src/docs"
     fields:
         - { label: "Placeholder", name: "placeholder", widget: "string" }
   - label: "Resume"
-    name: "Resume"
-    folder: "src/resume"
+    name: "resume"
+    files: "src/_data/resume.yaml"
     fields:
         - { label: "Full Resume", name: "text", widget: "textarea" }
   - label: "Settings"
