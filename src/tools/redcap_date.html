@@ -32,7 +32,7 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                 error: (jqXHR, textStatus, errorThrown) => console.log('error'),
                 success: function(data) {
                 
-                    data = lineData.map(x=>x[field]).reduce(function (acc, curr) {
+                    let lineData = data.map(x=>x[field]).reduce(function (acc, curr) {
                         return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
                     }, {});
                     
@@ -83,7 +83,7 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                     </div>
                     <div class="form-floating mb-4">
                         <input id="token" class="form-control" />
-                        <label class="form-label" for="token">API Token</label>
+                        <label class="form-label" for="token" autocomplete="off">API Token</label>
                     </div>
                     <div class="form-floating mb-4">
                         <input id="field" class="form-control" />
