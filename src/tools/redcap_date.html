@@ -28,6 +28,7 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                 },
                 error: (jqXHR, textStatus, errorThrown) => console.log('error'),
                 success: function(data) {
+                    console.log(data);
                     data = JSON.parse(data);
                     console.log(data);
                     const ctx = document.getElementById('myChart').getContext('2d');
