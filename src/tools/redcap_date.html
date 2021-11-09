@@ -15,11 +15,10 @@ description: Simple plugin to pull a date field and display a line graph. Easily
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
 <script type="text/javascript">
     window.onload = function () {
-            
+        $("#token").val("");
         $("button").on('click', function() {
             
             let field = $("#field").val();
-            
         
             $.ajax({
                 method: 'POST',
@@ -109,12 +108,12 @@ description: Simple plugin to pull a date field and display a line graph. Easily
         <div class="row">
             <div class="col-md-4">
                 <h2>Date Visualizer	</h2>
-                <p>This widgit pulls 1 date field from a redcap instance and visualizes it as a line graph. Please note that by entering your API token this site could potentially perform a malicious action, you should review the JS code (its short) on this site before using or adapt/reuse the code for your own deploy.
+                <p>This widgit pulls 1 date field from a redcap instance and visualizes it as a line graph, bucketed to every day, and a bar chart, bucketed to every month. Please note that by entering your API token this site could potentially perform a malicious action, you should review the JS code (its short) on this site before using or adapt/reuse the code for your own deploy.
                 </p>
                 <div>
                     <div class="form-floating mb-4">
                         <input id="redcap" class="form-control" />
-                        <label class="form-label" for="redcap">Redcap URL</label>
+                        <label class="form-label" for="redcap" placeholder="https://redcap.ictr.wisc.edu/">Redcap URL</label>
                     </div>
                     <div class="form-floating mb-4">
                         <input id="token" class="form-control" />
