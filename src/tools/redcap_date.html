@@ -1,0 +1,93 @@
+---
+title: Dates Overtime REDCap Plugin
+description: Simple plugin to pull a date field and display a line graph. Easily repurposed.
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ploter</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+            
+        $("button").on('click', function() {
+            $.ajax({
+                method: 'POST',
+                url: $("redcap").val()+'/api/',
+                data: {
+                    token: $("token").val(),
+                    content: 'record',
+                    format: 'json',
+                    'fields[0]': $("field").val()
+                },
+                error: (jqXHR, textStatus, errorThrown) => console.log('error'),
+                success: function(data) {
+                    data = JSON.parse(data);
+                    console.log(data);
+                    const ctx = document.getElementById('myChart').getContext('2d');
+                    const chartData = {
+                      labels: [1,2,3,4,5,6,7],
+                      datasets: [{
+                        label: $("field").val(),
+                        data: [65, 59, 80, 81, 56, 55, 40],
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                      }]
+                    };
+                    const myChart = new Chart(ctx, {
+                        type: 'line',
+                        data: chartData,
+                        options: {
+                            plugins: {
+                                title: {
+                                    display: true,
+                                    text: 'Cool data dude'
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    }
+</script>
+</head>
+<body class="m-4">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Date Visualizer	</h2>
+                <p>This widgit pulls 1 date field from a redcap instance and visualizes it as a line graph. Please note that by entering your API token this site could potentially perform a malicious action, you should review the JS code (its short) on this site before using or adapt/reuse the code for your own deploy.
+                </p>
+                <div>
+                    <div class="form-floating mb-4">
+                        <input id="redcap" class="form-control" />
+                        <label class="form-label" for="redcap">Redcap URL</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input id="token" class="form-control" />
+                        <label class="form-label" for="token">API Token</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input id="field" class="form-control" />
+                        <label class="form-label" for="Field">Date Field</label>
+                    </div>
+                    <button class="btn btn-primary btn-block" style="float:right">Load</button>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

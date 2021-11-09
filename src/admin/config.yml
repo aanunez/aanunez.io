@@ -32,7 +32,13 @@ collections:
     description: "All docs pages are created in the 'docs' folder. They are typically styled independent of the core site."
     folder: "src/docs"
     fields:
-        - { label: "Placeholder", name: "placeholder", widget: "string" }
+        - { label: "Placeholder", name: "placeholder1", widget: "string" }
+  - label: "Tools"
+    name: "Tools"
+    description: "All tools pages are created in the 'tools' folder. They are typically styled independent of the core site."
+    folder: "src/tools"
+    fields:
+        - { label: "Placeholder", name: "placeholder2", widget: "string" }
   - label: "Settings"
     name: "settings"
     editor:
