@@ -37,11 +37,22 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                     token: $("#token").val(),
                     content: 'record',
                     format: 'json',
+                    returnFormat: 'json',
                     'fields[0]': field
                 },
                 error: (jqXHR, textStatus, errorThrown) => console.log(`${JSON.stringify(jqXHR)}\n${textStatus}\n${errorThrown}`),
                 success: function(data) {
-                    console.log(data);
+                    
+                    if ( typeof data == "string" )
+                        data = JSON.parse(data);
+                    
+                    if ( data.statusText ) {
+                        console.log(data.statusText)
+                        return;
+                    }
+                    
+                    Object.assign({}, ...function _flatten(o) { return [].concat(...Object.keys(o).map(k => typeof o[k] === 'object' ? _flatten(o[k]) : ({[k]: o[k]})))}(data));
+                    
                     data = data.map(x=>x[field]).sort();
                     
                     let lineData = data.reduce(function (acc, curr) {
