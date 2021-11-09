@@ -28,20 +28,23 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                 },
                 error: (jqXHR, textStatus, errorThrown) => console.log('error'),
                 success: function(data) {
-                    console.log(data);
-                    data = JSON.parse(data);
-                    console.log(data);
+                
+                    data = data.map(x=>x[$("#field").val()]).reduce(function (acc, curr) {
+                        return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
+                    }, {});
+                    
                     const ctx = document.getElementById('myChart').getContext('2d');
                     const chartData = {
-                      labels: [1,2,3,4,5,6,7],
+                      labels: Object.keys(data),
                       datasets: [{
                         label: $("field").val(),
-                        data: [65, 59, 80, 81, 56, 55, 40],
+                        data: Object.values(data),
                         fill: false,
                         borderColor: 'rgb(75, 192, 192)',
                         tension: 0.1
                       }]
                     };
+                    
                     const myChart = new Chart(ctx, {
                         type: 'line',
                         data: chartData,
