@@ -15,6 +15,7 @@ description: Simple plugin to pull a date field and display a line graph. Easily
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
 <script type="text/javascript">
     window.onload = function () {
+        let colors = ['rgb(255, 99, 132)','rgb(75, 192, 192)','rgb(54, 162, 235)' ]
         $("#token").val("");
         $("button").on('click', function() {
             
@@ -43,8 +44,8 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                       datasets: [{
                         label: field,
                         data: Object.values(lineData),
-                        fill: false,
-                        tension: 0.2
+                        tension: 0.2,
+                        borderColor: colors[Math.floor(Math.random()*colors.length)],
                       }]
                     };
                     
@@ -74,6 +75,7 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                       datasets: [{
                         label: field,
                         data: Object.values(monthData),
+                        backgroundColor: colors[Math.floor(Math.random()*colors.length)
                       }]
                     };
                     
