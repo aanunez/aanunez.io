@@ -17,6 +17,9 @@ description: Simple plugin to pull a date field and display a line graph. Easily
     window.onload = function () {
             
         $("button").on('click', function() {
+            
+            let field = $("#field").val();
+        
             $.ajax({
                 method: 'POST',
                 url: $("#redcap").val()+'api/',
@@ -24,24 +27,24 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                     token: $("#token").val(),
                     content: 'record',
                     format: 'json',
-                    'fields[0]': $("#field").val()
+                    'fields[0]': field
                 },
                 error: (jqXHR, textStatus, errorThrown) => console.log('error'),
                 success: function(data) {
                 
-                    data = data.map(x=>x[$("#field").val()]).reduce(function (acc, curr) {
+                    data = lineData.map(x=>x[field]).reduce(function (acc, curr) {
                         return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
                     }, {});
                     
                     const ctx = document.getElementById('myChart').getContext('2d');
                     const chartData = {
-                      labels: Object.keys(data),
+                      labels: Object.keys(lineData),
                       datasets: [{
-                        label: $("field").val(),
-                        data: Object.values(data),
+                        label: field,
+                        data: Object.values(lineData),
                         fill: false,
                         borderColor: 'rgb(75, 192, 192)',
-                        tension: 0.1
+                        tension: 0.2
                       }]
                     };
                     
@@ -49,6 +52,9 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                         type: 'line',
                         data: chartData,
                         options: {
+                            legend: {
+                                display: false
+                            },
                             plugins: {
                                 title: {
                                     display: true,
