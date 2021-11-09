@@ -15,12 +15,16 @@ description: Simple plugin to pull a date field and display a line graph. Easily
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
 <script type="text/javascript">
     window.onload = function () {
-        let colors = ['rgb(255, 99, 132)','rgb(75, 192, 192)','rgb(54, 162, 235)' ]
+    
+        let colors = ['rgb(255, 99, 132)','rgb(75, 192, 192)','rgb(54, 162, 235)' ];
+        let barChart, lineChart;
+
         $("#token").val("");
+        
         $("button").on('click', function() {
         
             if ( typeof lineChart !== "undefined" )
-                lineData.destroy();
+                lineChart.destroy();
             if ( typeof barChart !== "undefined" )
                 barChart.destroy();
             
@@ -84,7 +88,7 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                       }]
                     };
                     
-                    let barChart = new Chart(ctxBar, {
+                    barChart = new Chart(ctxBar, {
                         type: 'bar',
                         data: barConfig,
                         options: {
