@@ -33,7 +33,7 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                 error: (jqXHR, textStatus, errorThrown) => console.log('error'),
                 success: function(data) {
                 
-                    data = data.map(x=>x[field]);
+                    data = data.map(x=>x[field]).sort();
                     
                     let lineData = data.reduce(function (acc, curr) {
                         return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
