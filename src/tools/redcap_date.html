@@ -41,7 +41,7 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                 },
                 error: (jqXHR, textStatus, errorThrown) => console.log('error'),
                 success: function(data) {
-                
+                    console.log(data);
                     data = data.map(x=>x[field]).sort();
                     
                     let lineData = data.reduce(function (acc, curr) {
