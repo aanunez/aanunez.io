@@ -39,7 +39,7 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                     format: 'json',
                     'fields[0]': field
                 },
-                error: (jqXHR, textStatus, errorThrown) => console.log(`${jqXHR}\n${textStatus}\n${errorThrown}`),
+                error: (jqXHR, textStatus, errorThrown) => console.log(`${JSON.stringify(jqXHR)}\n${textStatus}\n${errorThrown}`),
                 success: function(data) {
                     console.log(data);
                     data = data.map(x=>x[field]).sort();
