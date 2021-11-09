@@ -18,6 +18,11 @@ description: Simple plugin to pull a date field and display a line graph. Easily
         let colors = ['rgb(255, 99, 132)','rgb(75, 192, 192)','rgb(54, 162, 235)' ]
         $("#token").val("");
         $("button").on('click', function() {
+        
+            if ( typeof lineChart !== "undefined" )
+                lineData.destroy();
+            if ( typeof barChart !== "undefined" )
+                barChart.destroy();
             
             let field = $("#field").val();
         
@@ -38,8 +43,8 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                     let lineData = data.reduce(function (acc, curr) {
                         return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
                     }, {});
-                    const ctxLine = document.getElementById('lineChart').getContext('2d');
-                    const lineConfig = {
+                    let ctxLine = document.getElementById('lineChart').getContext('2d');
+                    let lineConfig = {
                       labels: Object.keys(lineData),
                       datasets: [{
                         label: field,
@@ -49,7 +54,7 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                       }]
                     };
                     
-                    const lineChart = new Chart(ctxLine, {
+                    let lineChart = new Chart(ctxLine, {
                         type: 'line',
                         data: lineConfig,
                         options: {
@@ -69,8 +74,8 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                         curr = curr.slice(0,7);
                         return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
                     }, {});
-                    const ctxBar = document.getElementById('barChart').getContext('2d');
-                    const barConfig = {
+                    let ctxBar = document.getElementById('barChart').getContext('2d');
+                    let barConfig = {
                       labels: Object.keys(monthData),
                       datasets: [{
                         label: field,
@@ -79,7 +84,7 @@ description: Simple plugin to pull a date field and display a line graph. Easily
                       }]
                     };
                     
-                    const barChart = new Chart(ctxBar, {
+                    let barChart = new Chart(ctxBar, {
                         type: 'bar',
                         data: barConfig,
                         options: {
