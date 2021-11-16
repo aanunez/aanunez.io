@@ -15,8 +15,8 @@ description: REDCap External Module. Hide REDCap generated columns on your repor
     </head>
     <body class="bg-light">
         <div class="container">
-            <h1 class="m-4 fw-bold"><i class="fas fa-info-circle"></i> How to use the Report Tweaks External Module</h1>
-            <div class="card m-4 card-primary">
+            <h1 class="my-4 fw-bold"><i class="fas fa-info-circle"></i> How to use the Report Tweaks External Module</h1>
+            <div class="card my-4 card-primary">
                 <div class="card-header text-white fw-bold bg-primary bg-gradient">Purpose</div>
                 <div class="card-body">
                     The Report Tweaks external module allows end-users to apply a variety of tweaks to individual reports from the "Edit Report" page. These tweaks currently include:
@@ -29,26 +29,26 @@ description: REDCap External Module. Hide REDCap generated columns on your repor
                     
                 </div>
             </div>
-            <div class="card m-4">
+            <div class="card my-4">
                 <div class="card-header text-white fw-bold bg-secondary bg-gradient">Prerequisites</div>
                 <div class="card-body">
                     Using this EM requires <b>no</b> special knowledge, changes to your project settings, or intervention by administrators. The EM can be fully configured with only access to Edit Reports.
                 </div>
             </div>
-            <div class="card m-4">
+            <div class="card my-4">
                 <div class="card-header text-white fw-bold bg-primary bg-gradient">Using the module</div>
                 <div class="card-body">
                 <div class="text-center"><img class="img-fluid" src="https://aanunez.io/static/img/report_tweaks_1.PNG"></div><br>
                 All configuration for Report Tweaks is controlled on the Edit Report page, just below the "Additional Report Options" section. Settings can be enabled or disabled by any user able to access this page. As with changes to any other report setting you will need to click "Save Report" after changing any settings for Report Tweaks. By default new reports will have the "Include redcap_event_name in the report" box checked as this is typical REDCap behaviour. It should be noted that new reports cannot immediately have their Report Tweaks settings changed and must first be saved so a Report ID can be assigned by REDCap.
                 </div>
             </div>
-            <div class="card m-4">
+            <div class="card my-4">
                 <div class="card-header text-white fw-bold bg-secondary bg-gradient">Combining Rows</div>
                 <div class="card-body">
                 Rows will be merged when both share a common <code>record_id</code> and are, excluding REDCap generated columns, disjoint. This is most common when data is pulled from two different forms on separate events. This feature is not helpful for removing many rows returned from the same repeating instance as those rows will likely have many of the same data points (i.e. have data in the same column).
                 </div>
             </div>
-            <div class="card m-4">
+            <div class="card my-4">
                 <div class="card-header text-white fw-bold bg-secondary bg-gradient">Report Writebacks</div>
                 <div class="card-body">
                     <div class="row">
