@@ -1,6 +1,4 @@
 items:
-  - text: Resume
-    url: "#"
   - text: Docs
     url: /docs
   - text: Tools
