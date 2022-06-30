@@ -5,12 +5,40 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
+  <title>zǝunu ɯɐpɐ</title>
 </head>
 
-<body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.ts"></script>
+<body class="flex h-screen">
+
+  <div class="container m-auto align-middle lg:h-5/6 flex flex-col justify-center items-center">
+    <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6 my-8 px-4 lg:mx-0">
+      <div class="flex flex-wrap content-center lg:mx-4 mx-8">
+
+        <h1 class="pb-4 text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 font-bold">
+          Howdy!
+        </h1>
+
+        <p class="pb-4">
+          I'm Adam, a full-time Software Engineer currently working at the Abt Associates.
+          Part-time I assist the UW Madison Center for Tobacco Research & Intervention
+          with data pipline and integration issues.
+          Currently pursuing a Master's degree, and occasionally consulting for various things.
+        </p>
+
+        <div
+          class="flex space-x-4 lg:mt-2 lg:mr-8 mt-0 w-full lg:justify-end justify-center lg:text-lg text-2xl text-slate-400">
+          <a id="email"><i class="fa-solid fa-envelope fa-2xl"></i></a>
+          <a id="linkedin"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+          <a id="github"><i class="fa-brands fa-github-square fa-2xl"></i></a>
+        </div>
+
+      </div>
+      <div><img class="rounded-md lg:flex hidden" src="img/home.jpg"></div>
+    </div>
+  </div>
+
+  <script type="module" src="src/main.ts"></script>
 </body>
+
 
 </html>

@@ -1,7 +1,10 @@
 import './style.css'
 
-const app = document.querySelector<HTMLDivElement>('#app')!
+let email = document.getElementById("email") as HTMLElement
+email.setAttribute("href", "mailto:adam.a.nunez@gmail.com")
 
-app.innerHTML = `
-  <h1>Site Under Construction</h1>
-`
+let linkedin = document.getElementById("linkedin") as HTMLElement
+linkedin.setAttribute("href", "https://www.linkedin.com/in/adam-a-nunez/")
+
+let github = document.getElementById("github") as HTMLElement
+github.setAttribute("href", "https://github.com/aanunez/");
