@@ -1,9 +1,0 @@
----
-title: Hello world!
-description: A first attempt
-author: Adam
-date: 2017-06-23
-tags:
-  - meta
----
-So I finally got around to creating some kind of website and, as I'm sure is obvious, I did pretty much the bare minimum. I don't much care for more complex websites and I've always been a fan of [Stallman's](https://stallman.org/) sans the clutter. This whole thing is just a single HTML file with three lines of CSS, these posts are generated via [pandoc](http://pandoc.org/) from markdown. The whole thing is then wrapped in a python script to easily manage the multiple files, and tacking on the header / footer. Not sure why I never thought of this before.
