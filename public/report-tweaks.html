@@ -11,7 +11,7 @@
 
 <body class="bg-light">
     <div class="container">
-        <h1 class="my-4 fw-bold"><i class="fas fa-info-circle"></i> How to use the Report Tweaks External Module</h1>
+        <h2 class="my-4 fw-bold"><i class="fas fa-info-circle"></i> How to use the Report Tweaks External Module</h2>
         <div class="card my-4 card-primary">
             <div class="card-header text-white fw-bold bg-primary bg-gradient">Purpose</div>
             <div class="card-body">
@@ -22,15 +22,16 @@
                         report for smaller screens if the column isn't needed. </li>
                     <li>Combine (merge) rows representing the same record on the report. </li>
                     <li>Remove rows with no data. Useful if your report filtering occasionally returns blank rows.</li>
-                    <li>Add a date-range live filter to filter rows down to those with a date in a common time range</li>
                     <li>Show the reports filter logic. Useful if advanced users want to see the report's logic, but shouldn't be allowed to edit the report.</li>
+                    <li>Add a date-range live filter to filter rows down to those with a date in a common time range</li>
+                    <li>Collapse longer report descriptions</li>
                     <li>Add one or multiple "writeback" buttons to the report to update values in the database for all rows in a report. </li>
                 </ul>
                 Regardless of configuration the following additions are made to all reports:
                 <ul>
                     <li>Minimum and Maximum search boxes are added to find arbitrary ranges on a selected column</li>
-                    <li>A copy button is added that copys all visible data in the report</li>
-                    <li>Checkboxes to show/hide REDCap generated columns on the report</li>
+                    <li>A copy button is added that copies all visible data in the report</li>
+                    <li>Checkboxes to toggle showing REDCap generated columns on the report</li>
                 </ul>
             </div>
         </div>
@@ -50,9 +51,9 @@
                 Report Options" section. Settings can be enabled or disabled by any user able to access this page. As
                 with changes to any other report setting you will need to click "Save Report" after changing any
                 settings for Report Tweaks. By default new reports will have the "Include redcap_event_name in the
-                report" box checked as this is typical REDCap behaviour. It should be noted that new reports cannot
-                immediately have their Report Tweaks settings changed and must first be saved so a Report ID can be
-                assigned by REDCap.
+                report" box checked as this is typical REDCap behaviour. <b>It should be noted that new reports cannot
+                    immediately have their Report Tweaks settings changed and must first be saved so a Report ID can be
+                    assigned by REDCap.</b>
             </div>
         </div>
         <div class="card my-4">
@@ -72,6 +73,13 @@
                 filtering is discouraged as it will slow down any large report that needs many rows removed. Rows are
                 "empty" if they contain no data other than REDCap generated (<code>redcap_</code>) fields. Data filtered
                 this way is still included in Data Exports, but not when using the EM's copy data button.
+            </div>
+        </div>
+        <div class="card my-4">
+            <div class="card-header text-white fw-bold bg-secondary bg-gradient">Show Report Filter Logic</div>
+            <div class="card-body">
+                For users that want to be reminded exactly of how the report is pulling data, this option adds a toggle
+                to display the report's filter logic.
             </div>
         </div>
         <div class="card my-4">
@@ -101,7 +109,8 @@
                             update some field on a subject's record to a defined value. Settings for the writeback
                             feature can be enabled by checking the box next to the feature and edited by clicking the
                             "configure" button. That value could be static (i.e. set only in the Edit Report screen),
-                            determined by the user when they click the writeback button, or the current date.</p>
+                            determined by the user when they click the writeback button, the current date, or the
+                            username of the person clicking the button. Multiple write back buttons are supported.</p>
                         <p>Helpful FYIs</p>
                         <ul>
                             <li>The user that clicks the writeback button will need to have appropriate permissions to
