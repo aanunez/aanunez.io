@@ -8,3 +8,9 @@ linkedin.setAttribute("href", "https://www.linkedin.com/in/adam-a-nunez/")
 
 const github = document.getElementById("github") as HTMLElement
 github.setAttribute("href", "https://github.com/aanunez/");
+
+const emrepo = document.getElementById("emrepo") as HTMLElement
+emrepo.setAttribute("href", "https://redcap.vanderbilt.edu/consortium/modules/index.php")
+
+const uwctri = document.getElementById("uwctri") as HTMLElement
+uwctri.setAttribute("href", "https://github.com/uwctri")
