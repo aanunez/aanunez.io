@@ -14,12 +14,3 @@ emrepo.setAttribute("href", "https://redcap.vanderbilt.edu/consortium/modules/in
 
 const uwctri = document.getElementById("uwctri") as HTMLElement
 uwctri.setAttribute("href", "https://github.com/uwctri")
-
-const ghchart = document.getElementById("ghchart") as HTMLElement
-if (ghchart) {
-    fetch("https://ghchart.rshah.org/6e6e6e/aanunez.svg")
-        .then(response => response.text())
-        .then(svg => {
-            ghchart.innerHTML = svg
-        })
-}
