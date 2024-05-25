@@ -38,7 +38,7 @@ const todayYMD = today.toISOString().split('T')[0]
     let svgplot = []
     let score = 0
     let count = 0
-    while (ymd < todayYMD) {
+    while (ymd <= todayYMD) {
         date = (new Date(new Date(date).setDate(date.getDate() + 1)))
         ymd = date.toISOString().split('T')[0]
         score = Math.floor(100 - (history[ymd] * scale))
