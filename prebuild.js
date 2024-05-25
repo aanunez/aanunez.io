@@ -35,7 +35,6 @@ const todayYMD = today.toISOString().split('T')[0]
     }
 
     let scale = 100 / Math.max(...Object.values(history))
-    scale = scale > 1 ? scale * .5 : scale
     let svgplot = []
     let score = 0
     let count = 0
