@@ -13,9 +13,8 @@ let history = new Proxy({}, {
 })
 
 let today = new Date()
-let date = new Date(new Date().setDate(today.getDate() - 30 - 1))
+let date = new Date(new Date().setDate(today.getDate() - 30 - 2))
 let ymd = date.toISOString().split('T')[0]
-const todayYMD = today.toISOString().split('T')[0]
     ;
 (async () => {
     while ((size * page) <= (Math.ceil(total / size) * size)) {
@@ -38,7 +37,7 @@ const todayYMD = today.toISOString().split('T')[0]
     let svgplot = []
     let score = 0
     let count = 0
-    while (ymd <= todayYMD) {
+    while (count <= 30) {
         date = (new Date(new Date(date).setDate(date.getDate() + 1)))
         ymd = date.toISOString().split('T')[0]
         score = Math.floor(100 - (history[ymd] * scale))
