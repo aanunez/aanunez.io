@@ -13,7 +13,8 @@ let history = new Proxy({}, {
 })
 
 let today = new Date()
-let date = new Date(new Date().setDate(today.getDate() - 30 - 1))
+const tz = today.getTimezoneOffset() * 60 * 1000
+let date = new Date(new Date().setDate(today.getDate() - 30 - 1) - tz)
 let ymd = date.toISOString().split('T')[0]
     ;
 (async () => {
@@ -27,7 +28,8 @@ let ymd = date.toISOString().split('T')[0]
         }).then(res => res.json()).then(data => {
             total = data.total_count
             for (entry of data.items) {
-                history[entry.commit.author.date.split("T")[0]] += 1
+                let t = new Date(new Date(entry.commit.author.date).getTime() - tz)
+                history[t.toISOString().split("T")[0]] += 1
             }
             page += 1
         })
