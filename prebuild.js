@@ -13,7 +13,7 @@ let history = new Proxy({}, {
 })
 
 let today = new Date()
-let date = new Date(new Date().setDate(today.getDate() - 30 - 2))
+let date = new Date(new Date().setDate(today.getDate() - 30 - 1))
 let ymd = date.toISOString().split('T')[0]
     ;
 (async () => {
