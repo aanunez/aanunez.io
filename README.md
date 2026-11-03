@@ -1,14 +1,22 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f65ff0b3-6076-49fb-a5b4-ffa5e1181428/deploy-status)](https://app.netlify.com/sites/aanunez/deploys)
+# aanunez.io
 
-## Helpful Links
+Zero-dependency personal website built with vanilla HTML/CSS/JS and served via Nginx.
 
-[Vite app setup](https://tailwindcss.com/docs/guides/vite)
+## Development
 
-[Clockify me](https://app.clockify.me)
-
-## Reminders
+Runs purely on Node.js built-ins with zero npm packages:
 
 ```sh
-npm install
-npm run build
+npm run dev      # Starts local preview server at http://localhost:5173
+npm run build    # Builds static site to dist/
 ```
+
+## Coolify Deployment
+
+Deploy directly using Coolify:
+
+1. **New Resource** -> **Application** -> select this repository.
+2. **Build Pack**: Coolify will automatically detect `Dockerfile`.
+3. **Ports Exposes**: `80` (Coolify maps this to Traefik with automatic SSL).
+4. **Environment / Build Variables** (optional):
+   - Add `GITHUB_TOKEN` as a **Build Variable** if you want the commit history sparkline to automatically update on deploy. (If omitted, it uses the cached plot fallback).
