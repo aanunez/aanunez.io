@@ -1,6 +1,5 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { execSync } = require('node:child_process');
 
 const ROOT = __dirname;
 const DIST = path.join(ROOT, 'dist');
@@ -119,16 +118,8 @@ async function build() {
     copyDirRecursive(PUBLIC, DIST);
   }
 
-  // Compile Tailwind CSS with full package
-  try {
-    execSync('npx @tailwindcss/cli -i style.css -o dist/style.css --minify', {
-      stdio: 'inherit',
-      cwd: ROOT,
-    });
-  } catch (err) {
-    console.error('[build] Failed to compile Tailwind CSS:', err.message);
-    process.exit(1);
-  }
+  // Copy vanilla CSS
+  fs.copyFileSync(path.join(ROOT, 'style.css'), path.join(DIST, 'style.css'));
 
   fs.copyFileSync(path.join(ROOT, 'main.js'), path.join(DIST, 'main.js'));
   fs.writeFileSync(path.join(DIST, 'plot.json'), JSON.stringify({ data: plotData }, null, 2));

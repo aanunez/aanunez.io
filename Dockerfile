@@ -3,10 +3,6 @@ FROM node:22-alpine AS builder
 
 WORKDIR /app
 
-# Install dependencies (Tailwind package)
-COPY package.json package-lock.json ./
-RUN npm ci
-
 COPY . .
 
 ARG GITHUB_TOKEN

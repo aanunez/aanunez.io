@@ -9,31 +9,32 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 
-<body class="flex h-screen bg-[whitesmoke]">
+<body class="home-body">
 
-  <div class="container m-auto lg:h-5/6 flex justify-center items-center">
-    <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-6 my-8 px-4 lg:mx-0">
-      <div class="flex flex-wrap content-center lg:mx-4 mx-8">
+  <div class="home-wrapper">
+    <div class="home-grid">
+      <div class="home-content">
 
-        <h1 class="pb-4 text-6xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 font-bold">
+        <h1 class="home-title">
           Howdy!
         </h1>
 
-        <p class="pb-4">
+        <p class="home-bio">
           I'm Adam, a full-time Software Engineer in the healthcare space. I occasionally consult and do contract work
           related to data integration, REDCap, and custom application solutions. Hopefully I'll finish that Master's
           degree someday.
         </p>
 
-        <div
-          class="flex space-x-4 lg:mt-2 lg:mr-8 mt-0 w-full lg:justify-end justify-center lg:text-lg text-2xl text-slate-400">
-          <a id="email"><i class="fa-solid fa-envelope fa-2xl"></i></a>
-          <a id="linkedin"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
-          <a id="github"><i class="fa-brands fa-github-square fa-2xl"></i></a>
+        <div class="social-links">
+          <a id="email" aria-label="Email"><i class="fa-solid fa-envelope fa-2xl"></i></a>
+          <a id="linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+          <a id="github" aria-label="GitHub"><i class="fa-brands fa-github-square fa-2xl"></i></a>
         </div>
 
       </div>
-      <div><img class="rounded-[1.5rem] lg:flex hidden" src="/img/home.jpg"></div>
+      <div class="home-image-wrapper">
+        <img class="home-image" src="/img/home.jpg" alt="Home">
+      </div>
     </div>
   </div>
 

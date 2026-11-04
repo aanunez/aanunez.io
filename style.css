@@ -1,2 +1,275 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css);
-@import "tailwindcss";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+
+/* ==========================================================================
+   Base & Reset
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #f5f5f5; /* whitesmoke */
+  color: #334155; /* slate-700 */
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Home Page (/ /index.html)
+   ========================================================================== */
+
+.home-body {
+  display: flex;
+  min-height: 100vh;
+}
+
+.home-wrapper {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-grid {
+  width: 100%;
+  max-width: 72rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+.home-title {
+  padding-bottom: 1rem;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #3b82f6, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.home-bio {
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #94a3b8; /* slate-400 */
+  margin-top: 0;
+}
+
+.social-links a,
+.profile-social a {
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.social-links a:hover,
+.profile-social a:hover {
+  color: #475569;
+}
+
+.home-image-wrapper {
+  display: none;
+}
+
+.home-image {
+  border-radius: 1.5rem;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .home-wrapper {
+    height: 83.3333%;
+  }
+
+  .home-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0;
+  }
+
+  .home-content {
+    margin: 0 1rem;
+  }
+
+  .social-links {
+    justify-content: flex-end;
+    font-size: 1.125rem;
+    margin-top: 0.5rem;
+    padding-right: 2rem;
+  }
+
+  .home-image-wrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ==========================================================================
+   Contracts & Experience Page (/contracts.html)
+   ========================================================================== */
+
+.contracts-container {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.contracts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0 1rem 2rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .contracts-grid {
+    grid-template-columns: 3fr 9fr;
+  }
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+/* Sidebar Profile */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 8rem;
+  height: 8rem;
+  background-color: #cbd5e1;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.profile-role {
+  color: #475569; /* slate-600 */
+}
+
+.profile-social {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  color: #475569;
+}
+
+.commit-chart {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Content Area */
+.section-title {
+  color: #334155;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-title.mt-section {
+  margin-top: 1.5rem;
+}
+
+.text-content {
+  color: #334155;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.text-link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.job-item {
+  margin-bottom: 1.5rem;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
+  color: #334155;
+  font-weight: 700;
+}
+
+.job-title {
+  font-size: 1.25rem;
+}
+
+.job-period {
+  align-self: flex-end;
+}
+
+.job-company {
+  margin-right: 0.5rem;
+}
+
+.job-type {
+  color: #475569;
+  font-weight: 700;
+  font-size: 0.875rem;
+  display: inline-block;
+}
+
+.job-desc {
+  margin-top: 0.5rem;
+  color: #334155;
+  line-height: 1.6;
+}
