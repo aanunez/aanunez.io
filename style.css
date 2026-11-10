@@ -169,6 +169,11 @@ a {
   padding: 1.5rem;
 }
 
+aside.card {
+  align-self: start;
+  height: fit-content;
+}
+
 /* Sidebar Profile */
 .profile-card {
   display: flex;
